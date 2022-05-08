@@ -33,7 +33,7 @@
          <children>
             <VBox prefHeight="569.0" prefWidth="423.0">
                <children>
-                  <ListView prefHeight="296.0" prefWidth="423.0" VBox.vgrow="ALWAYS" />
+                  <ListView fx:id="warenkorbListe" prefHeight="296.0" prefWidth="423.0" VBox.vgrow="ALWAYS" />
                   <TextField prefHeight="71.0" prefWidth="322.0" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets top="5.0" />
