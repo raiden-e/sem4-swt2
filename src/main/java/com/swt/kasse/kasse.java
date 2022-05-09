@@ -7,8 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class kasse extends Application {
     public static Warenkorb warenkorb = new Warenkorb();
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(kasse.class.getResource("kasse.fxml"));

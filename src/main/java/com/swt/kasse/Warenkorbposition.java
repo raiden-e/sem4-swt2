@@ -1,16 +1,20 @@
 package com.swt.kasse;
 
+import java.util.Objects;
+
 public class Warenkorbposition {
-    private Artikel position;
+    private Artikel artikel;
     private int menge;
+    private double gesamtbetrag;
 
     public Warenkorbposition(Artikel position, int menge) {
-        this.position = position;
+        this.artikel = position;
         this.menge = menge;
+        this.gesamtbetrag = menge * artikel.getEinzelpreis();
     }
 
-    public Artikel getPosition() {
-        return position;
+    public Artikel getArtikel() {
+        return artikel;
     }
 
     public int getMenge() {
@@ -19,10 +23,25 @@ public class Warenkorbposition {
 
     public void setMenge(int menge) {
         this.menge = menge;
+        this.gesamtbetrag = menge * artikel.getEinzelpreis();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Warenkorbposition that = (Warenkorbposition) o;
+
+        return artikel.equals(that.getArtikel());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(artikel);
     }
 
     @Override
     public String toString() {
-        return "Artikel:" + position +", Menge:" + menge;
+        return artikel + ", Menge:" + menge + ", Gesamt: " + gesamtbetrag;
     }
 }

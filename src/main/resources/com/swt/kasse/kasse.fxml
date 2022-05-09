@@ -33,7 +33,15 @@
          <children>
             <VBox prefHeight="569.0" prefWidth="423.0">
                <children>
-                  <ListView fx:id="warenkorbListe" prefHeight="296.0" prefWidth="423.0" VBox.vgrow="ALWAYS" />
+                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="423.0">
+                     <children>
+                        <Label prefHeight="39.0" prefWidth="82.0" text="Artikel" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="39.0" prefWidth="87.0" text="Einzelpreis" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="39.0" prefWidth="58.0" text="Menge" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="39.0" prefWidth="100.0" text="Gesamtpreis" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <ListView fx:id="warenkorbListe" prefHeight="420.0" prefWidth="423.0" VBox.vgrow="ALWAYS" />
                   <TextField prefHeight="71.0" prefWidth="322.0" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets top="5.0" />
@@ -191,30 +199,30 @@
                <children>
                   <HBox prefHeight="63.0" prefWidth="250.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button fx:id="normales" mnemonicParsing="false" onAction="#normalesButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Normales" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Mohn" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Körner" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bNormales" mnemonicParsing="false" onAction="#bNormalesButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Normales" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bMohn" mnemonicParsing="false" onAction="#bMohnButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Mohn" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bKoerner" mnemonicParsing="false" onAction="#bKoernerButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Körner" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox prefHeight="64.0" prefWidth="234.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Sauerländer" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Berliner" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Schneke" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bSauerl" mnemonicParsing="false" onAction="#bSauerlButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Sauerländer" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bBerliner" mnemonicParsing="false" onAction="#bBerlinerButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Berliner" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bSchnecke" mnemonicParsing="false" onAction="#bSchneckeButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Schnecke" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox prefHeight="66.0" prefWidth="234.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Mehrkorn" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Sauerteig" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Walnussbrot" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bMehrkorn" mnemonicParsing="false" onAction="#bMehrkornButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Mehrkorn" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bSauert" mnemonicParsing="false" onAction="#bSauertButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Sauerteig" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bWalnuss" mnemonicParsing="false" onAction="#bWalnussButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Walnussbrot" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox prefHeight="65.0" prefWidth="234.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Kaffe" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Tee" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="1000.0" text="Kakao" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bKaffee" mnemonicParsing="false" onAction="#bKaffeeButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Kaffee" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bTee" mnemonicParsing="false" onAction="#bTeeButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Tee" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bKakao" mnemonicParsing="false" onAction="#bKakaoButtonAction" prefHeight="100.0" prefWidth="1000.0" text="Kakao" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <VBox alignment="BOTTOM_RIGHT" prefHeight="319.0" prefWidth="234.0" VBox.vgrow="ALWAYS">
