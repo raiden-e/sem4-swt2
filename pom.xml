@@ -65,7 +65,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.swt.pkpraktikumintellij/com.swt.kasse.kasse
+                                com.swt.pkpraktikumintellij/com.swt.kasse.Kasse
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
