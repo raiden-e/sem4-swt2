@@ -76,7 +76,7 @@
                <children>
                   <HBox prefHeight="55.0" prefWidth="293.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Storno" HBox.hgrow="ALWAYS">
+                        <Button fx:id="bStorno" mnemonicParsing="false" onAction="#bStornoButtonAction" prefHeight="50.0" prefWidth="150.0" text="Storno" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="2.0" right="2.0" />
                            </HBox.margin></Button>
@@ -101,7 +101,7 @@
                            </HBox.margin></Button>
                      </children>
                   </HBox>
-                  <TextField prefHeight="80.0" prefWidth="293.0">
+                  <TextField fx:id="tfEingabe" editable="false" prefHeight="80.0" prefWidth="293.0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -112,15 +112,15 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="96.0" prefWidth="293.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="7" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b7" mnemonicParsing="false" onAction="#b7ButtonAction" prefHeight="80.0" prefWidth="80.0" text="7" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="8" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b8" mnemonicParsing="false" onAction="#b8ButtonAction" prefHeight="80.0" prefWidth="80.0" text="8" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="9" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b9" mnemonicParsing="false" onAction="#b9ButtonAction" prefHeight="80.0" prefWidth="80.0" text="9" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
@@ -128,15 +128,15 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="4" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b4" mnemonicParsing="false" onAction="#b4ButtonAction" prefHeight="80.0" prefWidth="80.0" text="4" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="5" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b5" mnemonicParsing="false" onAction="#b5ButtonAction" prefHeight="80.0" prefWidth="80.0" text="5" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="6" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b6" mnemonicParsing="false" onAction="#b6ButtonAction" prefHeight="80.0" prefWidth="80.0" text="6" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
@@ -144,31 +144,15 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="99.0" prefWidth="293.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="1" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b1" mnemonicParsing="false" onAction="#b1ButtonAction" prefHeight="80.0" prefWidth="80.0" text="1" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="2" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b2" mnemonicParsing="false" onAction="#b2ButtonAction" prefHeight="80.0" prefWidth="80.0" text="2" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="3" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="5.0" right="5.0" />
-                                 </HBox.margin></Button>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="5.0" right="5.0" />
-                                 </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="," HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="5.0" right="5.0" />
-                                 </HBox.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="*" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b3" mnemonicParsing="false" onAction="#b3ButtonAction" prefHeight="80.0" prefWidth="80.0" text="3" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
@@ -176,15 +160,31 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="C" HBox.hgrow="ALWAYS">
+                              <Button fx:id="b0" mnemonicParsing="false" onAction="#b0ButtonAction" prefHeight="80.0" prefWidth="80.0" text="0" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="CE" HBox.hgrow="ALWAYS">
+                              <Button fx:id="bPunkt" mnemonicParsing="false" onAction="#bPunktButtonAction" prefHeight="80.0" prefWidth="80.0" text="." HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin></Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="Bestätigen" HBox.hgrow="ALWAYS">
+                              <Button fx:id="bStern" mnemonicParsing="false" onAction="#bSternButtonAction" prefHeight="80.0" prefWidth="80.0" text="*" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="bC" alignment="CENTER" mnemonicParsing="false" onAction="#bCButtonAction" prefHeight="80.0" prefWidth="80.0" text="C" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin></Button>
+                              <Button fx:id="bCE" alignment="CENTER" mnemonicParsing="false" onAction="#bCEButtonAction" prefHeight="80.0" prefWidth="80.0" text="CE" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin></Button>
+                              <Button fx:id="bBest" alignment="CENTER" mnemonicParsing="false" onAction="#bBestButtonAction" prefHeight="80.0" prefWidth="80.0" text="Bestätigen" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin>
