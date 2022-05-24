@@ -1,18 +1,16 @@
 package com.swt.kasse;
 
-import java.text.NumberFormat;
-import java.util.ArrayList;
-
 import com.swt.exceptions.ArtikelNichtVorhandenException;
 import com.swt.util.DialogUtil;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Kasse {
     public ArrayList<Artikel> artikel = new ArrayList<Artikel>();
@@ -35,7 +33,7 @@ public class Kasse {
     @FXML
     private MenuItem bQuit;
 
-    private Warenkorb wk = new Warenkorb();
+    private final Warenkorb wk = new Warenkorb();
 
     public void initialize() {
         wk.add(new Artikel(100, "schule", 123123));
@@ -250,7 +248,7 @@ public class Kasse {
 
     @FXML
     private void bSternButtonAction(ActionEvent event) {
-        if (tfEingabe.getText() == "" || Double.parseDouble(tfEingabe.getText()) == 0.0d
+        if (Objects.equals(tfEingabe.getText(), "") || Double.parseDouble(tfEingabe.getText()) == 0.0d
                 || tfEingabe.getText().contains("."))
             return;
         if (warenkorbListe.getSelectionModel().getSelectedItem() == null)
@@ -277,7 +275,7 @@ public class Kasse {
 
     @FXML
     private void bPunktButtonAction(ActionEvent event) {
-        if (tfEingabe.getText() == "")
+        if (Objects.equals(tfEingabe.getText(), ""))
             return;
         if (tfEingabe.getText().contains("."))
             return;
@@ -287,7 +285,7 @@ public class Kasse {
     @FXML
 
     private void bBestButtonAction(ActionEvent event) {
-        if (tfEingabe.getText() == "" || Integer.parseInt(tfEingabe.getText()) == 0
+        if (Objects.equals(tfEingabe.getText(), "") || Integer.parseInt(tfEingabe.getText()) == 0
                 || tfEingabe.getText().contains("."))
             return;
         try {

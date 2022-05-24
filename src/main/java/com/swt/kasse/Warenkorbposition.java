@@ -3,7 +3,7 @@ package com.swt.kasse;
 import java.util.Objects;
 
 public class Warenkorbposition {
-    private Artikel artikel;
+    private final Artikel artikel;
     private int menge;
     private double gesamtbetrag;
 

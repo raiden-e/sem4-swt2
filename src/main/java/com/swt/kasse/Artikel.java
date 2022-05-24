@@ -3,9 +3,9 @@ package com.swt.kasse;
 import java.util.Objects;
 
 public class Artikel {
-    private int id;
-    private String name;
-    private double einzelpreis;
+    private final int id;
+    private final String name;
+    private final double einzelpreis;
 
     public Artikel(int id, String name, double einzelpreis) {
         this.id = id;

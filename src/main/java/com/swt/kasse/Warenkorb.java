@@ -3,7 +3,7 @@ package com.swt.kasse;
 import java.util.ArrayList;
 
 public class Warenkorb {
-    private ArrayList<Warenkorbposition> position = new ArrayList<Warenkorbposition>();
+    private final ArrayList<Warenkorbposition> position = new ArrayList<>();
 
     public Warenkorb() {
     }
