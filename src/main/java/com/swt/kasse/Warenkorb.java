@@ -20,11 +20,18 @@ public class Warenkorb {
 
     public void remove(Warenkorbposition wp) {
         position.remove(wp);
-        // position.remove(position.remove(position.indexOf(wp));
     }
 
     public void mengeAndern(Warenkorbposition wp, int anzahl) {
         wp.setMenge(anzahl);
+    }
+
+    public double getGesamtBetrag() {
+        double gesamtBetrag = 0.0;
+        for (var x : position)
+            gesamtBetrag += x.getGesamtBetrag();
+
+        return gesamtBetrag;
     }
 
     public ArrayList<Warenkorbposition> getInhalt() {

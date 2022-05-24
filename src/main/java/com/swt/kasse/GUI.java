@@ -1,12 +1,12 @@
 package com.swt.kasse;
 
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-
 
 public class GUI extends Application {
     @Override
@@ -21,5 +21,9 @@ public class GUI extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static void close(){
+        Platform.exit();
     }
 }

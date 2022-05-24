@@ -26,10 +26,16 @@ public class Warenkorbposition {
         this.gesamtbetrag = menge * artikel.getEinzelpreis();
     }
 
+    public double getGesamtBetrag() {
+        return gesamtbetrag;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Warenkorbposition that = (Warenkorbposition) o;
 
         return artikel.equals(that.getArtikel());

@@ -1,16 +1,20 @@
 package com.swt.kasse;
 
-import com.swt.exceptions.ArtikelNichtVorhandenException;
-import com.swt.util.DialogUtil;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
-public class Kasse {
+import com.swt.exceptions.ArtikelNichtVorhandenException;
+import com.swt.util.DialogUtil;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class Kasse {
     public ArrayList<Artikel> artikel = new ArrayList<Artikel>();
 
     @FXML
@@ -18,6 +22,18 @@ public class Kasse {
 
     @FXML
     private TextField tfEingabe;
+
+    @FXML
+    private TextField tfDetails;
+
+    @FXML
+    private MenuItem bAbout;
+
+    @FXML
+    private MenuItem bUserSession;
+
+    @FXML
+    private MenuItem bQuit;
 
     private Warenkorb wk = new Warenkorb();
 
@@ -42,9 +58,12 @@ public class Kasse {
     public void setListe(Warenkorb w) {
         warenkorbListe.getItems().clear();
         warenkorbListe.getItems().addAll(w.getInhalt());
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        tfDetails.setText("Gesamtbetrag: " + formatter.format(wk.getGesamtBetrag()));
     }
 
-    public Artikel findeArtikelMitID(int id) throws ArtikelNichtVorhandenException{
+    public Artikel findeArtikelMitID(int id) throws ArtikelNichtVorhandenException {
         for (var x : artikel) {
             if (x.getId() == id)
                 return x;
@@ -231,7 +250,8 @@ public class Kasse {
 
     @FXML
     private void bSternButtonAction(ActionEvent event) {
-        if (tfEingabe.getText() == "" || Double.parseDouble(tfEingabe.getText()) == 0.0d || tfEingabe.getText().contains("."))
+        if (tfEingabe.getText() == "" || Double.parseDouble(tfEingabe.getText()) == 0.0d
+                || tfEingabe.getText().contains("."))
             return;
         if (warenkorbListe.getSelectionModel().getSelectedItem() == null)
             return;
@@ -242,13 +262,17 @@ public class Kasse {
     }
 
     @FXML
-    private void bCEButtonAction(ActionEvent event){
+    private void bCEButtonAction(ActionEvent event) {
         tfEingabe.clear();
     }
 
     @FXML
     private void bCButtonAction(ActionEvent event) {
-        tfEingabe.setText(tfEingabe.getText().substring(0,tfEingabe.getText().length()-1));
+        String text = tfEingabe.getText();
+        if (text.isEmpty())
+            return;
+
+        tfEingabe.setText(tfEingabe.getText().substring(0, tfEingabe.getText().length() - 1));
     }
 
     @FXML
@@ -261,23 +285,45 @@ public class Kasse {
     }
 
     @FXML
+
     private void bBestButtonAction(ActionEvent event) {
-        if (tfEingabe.getText() == "" || Integer.parseInt(tfEingabe.getText()) == 0 || tfEingabe.getText().contains("."))
+        if (tfEingabe.getText() == "" || Integer.parseInt(tfEingabe.getText()) == 0
+                || tfEingabe.getText().contains("."))
             return;
         try {
             wk.add(findeArtikelMitID(Integer.parseInt(tfEingabe.getText())));
             setListe(wk);
         } catch (ArtikelNichtVorhandenException e) {
-            DialogUtil.showMessageDialog("Artikel nicht gefunden", "Der Artikel mit der Nummer " + e.getMessage() + " wurde nicht gefunden!");
+            DialogUtil.showMessageDialog("Artikel nicht gefunden",
+                    "Der Artikel mit der Nummer " + e.getMessage() + " wurde nicht gefunden!");
         }
-
     }
 
+    @FXML
+    private void bQuitAction(ActionEvent event) {
+        GUI.close();
+    }
 
-//    public static String detailsBox;
-//    public static double nummernFeld;
-//    public static double bestand;
+    @FXML
+    private void bAboutAction(ActionEvent event) {
+        String msg = "Jo ich bin fresh Dumbledore, step einfach so durch deine Door!\n";
+        msg += "Jo ich bin Fresh Dumbledore\n";
+        msg += "Back from the underground, back for more\n";
+        msg += "Ich rappe hier, ich rappe dort\n";
+        msg += "Ich rapp' hundert mal besser als der dunkle Lord\n";
+        DialogUtil.showMessageDialog("Joooooo", msg);
+    }
 
-//    public void storno(){}
-//    public void beleg(){}
+    @FXML
+    private void bUserSessionAction(ActionEvent event) {
+        String msg = "Diese Methode ist noch nicht implementiert.";
+        DialogUtil.showMessageDialog("Bruh..", msg);
+    }
+
+    // public static String detailsBox;
+    // public static double nummernFeld;
+    // public static double bestand;
+
+    // public void storno(){}
+    // public void beleg(){}
 }
