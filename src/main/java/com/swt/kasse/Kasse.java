@@ -62,10 +62,9 @@ public class Kasse {
     }
 
     public Artikel findeArtikelMitID(int id) throws ArtikelNichtVorhandenException {
-        for (var x : artikel) {
+        for (var x : artikel)
             if (x.getId() == id)
                 return x;
-        }
         throw new ArtikelNichtVorhandenException("" + id);
     }
 
